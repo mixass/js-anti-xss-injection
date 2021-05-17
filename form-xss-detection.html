@@ -1,0 +1,14 @@
+<input type="text" id="message" placeholder="Message">
+<button onclick="sendMessage()"> Send Message </button>
+<script>
+    function sendMessage(){
+        var Message = document.getElementById("message").value;
+        var xssinjection = Message.search('<');
+        if (xssinjection == '-1') {
+            document.writeln("Your Message : " + Message);
+        } else {
+            alert('XSS Injection :P dont try again :)');
+
+        }
+    }
+</script>
